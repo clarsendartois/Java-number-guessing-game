@@ -16,6 +16,7 @@ public class JavaGuessingGame {
     public static void main(String[] args) {
         // TODO code application logic here
         // Test
+        // Test2
     }
     
 }
