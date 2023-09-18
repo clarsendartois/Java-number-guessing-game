@@ -24,7 +24,9 @@ public class Gui {// start
 
     // Assign icon to Frame
     public void setIconFrame(JFrame frame) {// start
-        frame.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Asset/logo.png")));
+        frame.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Asset/logo.png")));
     }// end
+
+    
 
 }// end class
