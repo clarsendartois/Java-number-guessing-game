@@ -8,14 +8,14 @@ package Classes;
  *
  * @author darto
  */
-public class GuessNumber {// start
+public class GuessNumbers {// start
 
     private static int _RANDOMGEN = 0;
 
     // Create a random number
     public static int _randomNumber() {// start
         _RANDOMGEN = (int) Math.round(Math.random() * 100); // 1-100
-        return _RANDOMGEN;
+        return _checkIfZero(_RANDOMGEN);
     }// ende
 
     // Check number if 0, ex. 1-9, should be 01-09
@@ -23,7 +23,7 @@ public class GuessNumber {// start
         int newNum = 0;
         if (num == 0) {
             newNum = _randomNumber();
-        }else {
+        } else {
             newNum = num;
         }
         return newNum;
