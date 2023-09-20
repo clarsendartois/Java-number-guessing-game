@@ -446,5 +446,13 @@ public class GuessingGame extends javax.swing.JFrame {
                 // load random number
                 random = GuessNumber._randomNumber();
                 f_guess.setText(String.valueOf(random));
-        } // end
+        } //
+
+        // Create new random
+        private void randomNew() {
+                random = GuessNumber._randomNumber();
+                f_guess.setText(String.valueOf(random));
+
+        }
+
 }// end class
