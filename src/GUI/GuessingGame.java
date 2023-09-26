@@ -29,6 +29,8 @@ public class GuessingGame extends javax.swing.JFrame {
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
+        // <editor-fold defaultstate="collapsed" desc="Generated
+        // <editor-fold defaultstate="collapsed" desc="Generated
         // Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
@@ -89,11 +91,21 @@ public class GuessingGame extends javax.swing.JFrame {
                 l_unshow.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                 l_unshow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/eye_disable.png"))); // NOI18N
                 l_unshow.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+                l_unshow.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                l_unshowMouseClicked(evt);
+                        }
+                });
 
                 l_show.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
                 l_show.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
                 l_show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/eye_enable.png"))); // NOI18N
                 l_show.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+                l_show.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                l_showMouseClicked(evt);
+                        }
+                });
 
                 l_showRandom.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
                 l_showRandom.setForeground(new java.awt.Color(0, 0, 0));
@@ -173,8 +185,7 @@ public class GuessingGame extends javax.swing.JFrame {
                                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                                 Short.MAX_VALUE))
                                                                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                                jPanel1Layout
-                                                                                                                .createSequentialGroup()
+                                                                                                jPanel1Layout.createSequentialGroup()
                                                                                                                 .addComponent(jLabel4)
                                                                                                                 .addPreferredGap(
                                                                                                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -247,10 +258,9 @@ public class GuessingGame extends javax.swing.JFrame {
                                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                                                 .addContainerGap()
-                                                                .addGroup(jPanel1Layout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                                false)
+                                                                .addGroup(jPanel1Layout.createParallelGroup(
+                                                                                javax.swing.GroupLayout.Alignment.LEADING,
+                                                                                false)
                                                                                 .addComponent(l_reset,
                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
@@ -271,10 +281,9 @@ public class GuessingGame extends javax.swing.JFrame {
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(
                                                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addGroup(jPanel1Layout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                                false)
+                                                                .addGroup(jPanel1Layout.createParallelGroup(
+                                                                                javax.swing.GroupLayout.Alignment.LEADING,
+                                                                                false)
                                                                                 .addComponent(jLabel4)
                                                                                 .addGroup(jPanel1Layout
                                                                                                 .createSequentialGroup()
@@ -351,6 +360,20 @@ public class GuessingGame extends javax.swing.JFrame {
 
                 pack();
         }// </editor-fold>//GEN-END:initComponents
+
+        private void l_unshowMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_l_unshowMouseClicked
+                // TODO add your handling code here:
+                l_show.setEnabled(true);
+                l_unshow.setEnabled(false);
+                l_showRandom.setText("?");
+        }// GEN-LAST:event_l_unshowMouseClicked
+
+        private void l_showMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_l_showMouseClicked
+                // TODO add your handling code here:
+                l_show.setEnabled(false);
+                l_unshow.setEnabled(true);
+                l_showRandom.setText(String.valueOf(random));
+        }// GEN-LAST:event_l_showMouseClicked
 
         private void f_guessActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_f_guessActionPerformed
                 // TODO add your handling code here:
@@ -439,8 +462,8 @@ public class GuessingGame extends javax.swing.JFrame {
         Gui gui;
 
         // variables
-        private int random = 0, bestScore = 0, yourScore = 0, addCorrectScore = 0;
-        private byte guessCount = 0, errorCount = 10, greaterThanError = 0, lessThanError = 0;
+        private int random = 0, bestScore = 0, yourScore = 0, addCorrectScore = 3;
+        private byte guessCount = 0, lifeCount = 10, greaterThanError = 0, lessThanError = 0;
 
         private void init() {// start
                 gui = new Gui();
@@ -450,6 +473,8 @@ public class GuessingGame extends javax.swing.JFrame {
                 gui.setIconFrame(this);
                 // load random number
                 random = GuessNumbers._randomNumber();
+                // Hide
+                l_unshow.setEnabled(false);
         } //
 
         // Create new random
@@ -465,16 +490,22 @@ public class GuessingGame extends javax.swing.JFrame {
                         f_guess.requestFocus();
                 } else if (Integer.parseInt(f_guess.getText()) >= 101 || Integer.parseInt(f_guess.getText()) < 1) {
                         Gui._message("Please enter number from 1-100!", 0);
+                        f_guess.setText("");// clear
                         f_guess.requestFocus();
                 } else {
                         int yourNumber = Integer.parseInt(f_guess.getText());
 
                         if (yourNumber == random) {
+                                Gui._message("YOU WON!\nAdditional 3 life was added.", 1);
                                 yourScore++; // increment correct number
                                 l_score.setText("Score: " + yourScore);
+                                // add life
+                                lifeCount += addCorrectScore;
+                                l_life.setText("Life: " + lifeCount);
+
                         } else {
-                                errorCount--; // Count the error
-                                l_life.setText("Life: " + errorCount);
+                                lifeCount--; // Count the error
+                                l_life.setText("Life: " + lifeCount);
                         }
                         // Count the guess
                         guessCount++; // increment guess
