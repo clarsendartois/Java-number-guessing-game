@@ -5,6 +5,7 @@
 package GUI;
 
 import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 import Classes.GuessNumbers;
 import Classes.Gui;
@@ -534,6 +535,8 @@ public class GuessingGame extends javax.swing.JFrame {
                                         l_life.setIcon(null);
 
                                 }
+                                // Creating hint
+                                hint(random, yourNumber);
 
                                 // check if lifeCount reached to 0
                                 if (lifeCount == 0) {
@@ -551,5 +554,41 @@ public class GuessingGame extends javax.swing.JFrame {
                 }
 
         }// end
+
+        // Creating hint
+        private void hint(int _randomNumber, int yourNumber) {
+                if (_randomNumber > yourNumber) {
+                        // Count
+                        lessThanError++;
+                } else {
+                        greaterThanError++;
+                }
+        }
+
+        // contains the message hint in array
+        private String messageHint(byte errorCount, byte errorCatcher, int numGuess) {
+                String message;
+                switch (errorCatcher) {
+                        // for less than hint
+                        case 1:
+                                String messageCat[] = {
+                                                String.valueOf(numGuess)
+                                                                + " is less than the number! Please be observant",
+                                                String.valueOf(numGuess)
+                                                                + " is less than the number! Don't you know how to compute?",
+                                                String.valueOf(numGuess) + " is less than the number! Oh!! Come On!!",
+                                                String.valueOf(numGuess)
+                                                                + " is less than the number! In tired of reminging!!",
+
+                                };
+                                break;
+                        // for greater than hint
+                        default:
+                                break;
+
+                }
+
+                return "";
+        }
 
 }// end class
