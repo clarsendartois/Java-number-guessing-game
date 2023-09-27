@@ -581,14 +581,50 @@ public class GuessingGame extends javax.swing.JFrame {
                                                                 + " is less than the number! In tired of reminging!!",
 
                                 };
+                                /**
+                                 * User only allows 2 error to have the default message
+                                 * otherwise, the next message will be dynamic
+                                 */
+                                if (errorCount < 2) {
+                                        message = String.valueOf(numGuess) + " is less than the random mumber!";
+
+                                } else {
+                                        // make it dynamic message out from category array
+                                        int randomMes = (int) Math.round(Math.random() * 3);
+                                        message = messageCat(randomMes);
+
+                                }
                                 break;
                         // for greater than hint
                         default:
+                        // Just change less to greater
+                        String messageCat1[] = {
+                                                String.valueOf(numGuess)
+                                                                + " is greater than the number! Please be observant",
+                                                String.valueOf(numGuess)
+                                                                + " is greater than the number! Don't you know how to compute?",
+                                                String.valueOf(numGuess) + " is greater than the number! Oh!! Come On!!",
+                                                String.valueOf(numGuess)
+                                                                + " is greater than the number! In tired of reminging!!",
+
+                                };
+                                /**
+                                 * User only allows 2 error to have the default message
+                                 * otherwise, the next message will be dynamic
+                                 */
+                                if (errorCount < 2) {
+                                        message = String.valueOf(numGuess) + " is greater than the random mumber!";
+
+                                } else {
+                                        // make it dynamic message out from category array
+                                        int randomMes = (int) Math.round(Math.random() * 3);
+                                        message = messageCat1(randomMes);
+
                                 break;
 
                 }
-
-                return "";
+                return message;
         }
 
-}// end class
+}
+// end class
