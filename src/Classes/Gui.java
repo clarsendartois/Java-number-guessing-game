@@ -68,4 +68,21 @@ public class Gui {// start
         }
     }// end
 
+    // create and update best score or highest score
+    // dir
+    private static String patFileBestScore = System.getProperty("user.dir") + "/src/GUI/bestscore.ini";
+
+    // get the current best score
+    public static int getCurrentBestScore() {
+
+        int bestScore;
+        String line, newLine = "";
+        try {
+            // reading fiel and get the content.
+        } catch (Exception e) {
+
+        }
+
+        return 0;
+    }
 }// end class

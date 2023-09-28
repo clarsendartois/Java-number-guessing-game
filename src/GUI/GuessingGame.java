@@ -557,11 +557,16 @@ public class GuessingGame extends javax.swing.JFrame {
 
         // Creating hint
         private void hint(int _randomNumber, int yourNumber) {
+                String mes;
                 if (_randomNumber > yourNumber) {
                         // Count
                         lessThanError++;
+                        mes = messageHint(lessThanError, (byte) 1, yourNumber);
+                        l_remarks.setText(mes);
                 } else {
                         greaterThanError++;
+                        mes = messageHint(greaterThanError, (byte) 0, yourNumber);
+                        l_remarks.setText(mes);
                 }
         }
 
@@ -591,19 +596,20 @@ public class GuessingGame extends javax.swing.JFrame {
                                 } else {
                                         // make it dynamic message out from category array
                                         int randomMes = (int) Math.round(Math.random() * 3);
-                                        message = messageCat(randomMes);
+                                        message = messageCat[randomMes];
 
                                 }
                                 break;
                         // for greater than hint
                         default:
-                        // Just change less to greater
-                        String messageCat1[] = {
+                                // Just change less to greater
+                                String messageCat1[] = {
                                                 String.valueOf(numGuess)
                                                                 + " is greater than the number! Please be observant",
                                                 String.valueOf(numGuess)
                                                                 + " is greater than the number! Don't you know how to compute?",
-                                                String.valueOf(numGuess) + " is greater than the number! Oh!! Come On!!",
+                                                String.valueOf(numGuess)
+                                                                + " is greater than the number! Oh!! Come On!!",
                                                 String.valueOf(numGuess)
                                                                 + " is greater than the number! In tired of reminging!!",
 
@@ -618,7 +624,8 @@ public class GuessingGame extends javax.swing.JFrame {
                                 } else {
                                         // make it dynamic message out from category array
                                         int randomMes = (int) Math.round(Math.random() * 3);
-                                        message = messageCat1(randomMes);
+                                        message = messageCat1[randomMes];
+                                }
 
                                 break;
 
