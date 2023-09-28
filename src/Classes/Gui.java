@@ -8,6 +8,13 @@ import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.Buffer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -79,10 +86,17 @@ public class Gui {// start
         String line, newLine = "";
         try {
             // reading fiel and get the content.
-        } catch (Exception e) {
+            BufferedReader buff = new BufferedReader(new FileReader(patFileBestScore));
+            while ((line = buff.readLine()) != null) {
+                newLine = line;
+            }
+        } catch (FileNotFoundException e) {
 
+        } catch (IOException ex) {
+            Logger.getLogger(Gui.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        return 0;
+        // Here we get the value bestScore[0] form index [ and ] using subtring
+        bestScore = Integer.parseInt(newLine.substring(newLine.indexOf("[") + 1, newLine.indexOf("]")));
+        return bestScore;
     }
 }// end class
