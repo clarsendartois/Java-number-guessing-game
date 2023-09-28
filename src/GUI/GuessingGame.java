@@ -489,6 +489,9 @@ public class GuessingGame extends javax.swing.JFrame {
                 random = GuessNumbers._randomNumber();
                 // Hide
                 l_unshow.setEnabled(false);
+                // get best score
+                bestScore = Gui.getCurrentBestScore();
+                l_bestscore.setText("Best Score: " + bestScore);
         } //
 
         // Create new random
