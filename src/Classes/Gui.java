@@ -9,10 +9,11 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.Buffer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -98,5 +99,18 @@ public class Gui {// start
         // Here we get the value bestScore[0] form index [ and ] using subtring
         bestScore = Integer.parseInt(newLine.substring(newLine.indexOf("[") + 1, newLine.indexOf("]")));
         return bestScore;
+    }
+
+    // Check for new best score and write to the existing file
+    public static void setNewBestScore(String newContent) {
+        try {
+            File fileToUpdate = new File(patFileBestScore);
+            try (FileWriter fileWrite = new FileWriter(fileToUpdate)) {
+                fileWrite.write(newContent);
+                fileWrite.close();
+            }
+        } catch (Exception e) {
+
+        }
     }
 }// end class
