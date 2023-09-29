@@ -526,6 +526,8 @@ public class GuessingGame extends javax.swing.JFrame {
                                 // add life
                                 lifeCount += addCorrectScore;
                                 l_life.setText("Life: " + lifeCount);
+                                // Check and update best score
+                                updateBestScore();
 
                         } else {
                                 lifeCount--; // Count the error
@@ -634,6 +636,17 @@ public class GuessingGame extends javax.swing.JFrame {
 
                 }
                 return message;
+        }
+
+        // update the best score
+        private void updateBestScore() {
+                if (yourScore > bestScore) {
+                        Gui._message("Congratilation! New best Score!", 1);
+                        Gui.setNewBestScore("bestScore[" + yourScore + "]");
+                        bestScore = yourScore;
+                        l_bestscore.setText("Best Score: " + bestScore);
+
+                }
         }
 
 }
