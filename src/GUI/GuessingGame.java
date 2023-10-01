@@ -548,6 +548,17 @@ public class GuessingGame extends javax.swing.JFrame {
                                 l_life.setText("Life: " + lifeCount);
                                 // Check and update best score
                                 updateBestScore();
+                                // encourage user to play again
+                                Object[] options = { "YES, I WANT NOW", "NO, I M TIRED" };
+                                int x = JOptionPane.showOptionDialog(this, "Want to play again? (yes/no)?",
+                                                "MESSAGE",
+                                                JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null,
+                                                options, null);
+                                if (x == JOptionPane.YES_OPTION) {
+                                        newGame();
+                                } else {
+                                        System.exit(0);
+                                }
 
                         } else {
                                 lifeCount--; // Count the error
@@ -566,7 +577,17 @@ public class GuessingGame extends javax.swing.JFrame {
                                 // check if lifeCount reached to 0
                                 if (lifeCount == 0) {
                                         Gui._message("You used all your life!\nPlease try again next time!", 0);
-                                        System.exit(0);
+                                        Object[] options = { "YES, I WANT NOW", "NO, I M TIRED" };
+                                        int x = JOptionPane.showOptionDialog(this, "Want to play again? (yes/no)?",
+                                                        "MESSAGE",
+                                                        JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE,
+                                                        null,
+                                                        options, null);
+                                        if (x == JOptionPane.YES_OPTION) {
+                                                newGame();
+                                        } else {
+                                                System.exit(0);
+                                        }
 
                                 } else {
 
