@@ -38,345 +38,229 @@ public class GuessingGame extends javax.swing.JFrame {
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
         // <editor-fold defaultstate="collapsed" desc="Generated
-        // Code">//GEN-BEGIN:initComponents
-        private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-                jPanel1 = new javax.swing.JPanel();
-                l_reset = new javax.swing.JLabel();
-                l_bestscore = new javax.swing.JLabel();
-                jLabel3 = new javax.swing.JLabel();
-                jSeparator1 = new javax.swing.JSeparator();
-                l_score = new javax.swing.JLabel();
-                l_guess = new javax.swing.JLabel();
-                l_life = new javax.swing.JLabel();
-                l_unshow = new javax.swing.JLabel();
-                l_show = new javax.swing.JLabel();
-                l_showRandom = new javax.swing.JLabel();
-                jLabel8 = new javax.swing.JLabel();
-                f_guess = new javax.swing.JTextField();
-                jLabel4 = new javax.swing.JLabel();
-                btn_newRandom = new javax.swing.JButton();
-                btn_guess = new javax.swing.JButton();
-                l_remarks = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        l_reset = new javax.swing.JLabel();
+        l_bestscore = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        l_score = new javax.swing.JLabel();
+        l_guess = new javax.swing.JLabel();
+        l_life = new javax.swing.JLabel();
+        l_unshow = new javax.swing.JLabel();
+        l_show = new javax.swing.JLabel();
+        l_showRandom = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        f_guess = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        btn_newRandom = new javax.swing.JButton();
+        btn_guess = new javax.swing.JButton();
+        l_remarks = new javax.swing.JLabel();
 
-                setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-                setTitle("GUESSING GAME");
-                setResizable(false);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("GUESSING GAME");
+        setResizable(false);
 
-                jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-                l_reset.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                l_reset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/reset.png"))); // NOI18N
-                l_reset.setToolTipText("Reset");
-                l_reset.addMouseListener(new java.awt.event.MouseAdapter() {
-                        public void mouseClicked(java.awt.event.MouseEvent evt) {
-                                l_resetMouseClicked(evt);
-                        }
-                });
+        l_reset.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_reset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/reset.png"))); // NOI18N
+        l_reset.setToolTipText("Reset");
+        l_reset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                l_resetMouseClicked(evt);
+            }
+        });
 
-                l_bestscore.setForeground(new java.awt.Color(0, 0, 0));
-                l_bestscore.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                l_bestscore.setText("Best Score: 0");
-                l_bestscore.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        l_bestscore.setForeground(new java.awt.Color(0, 0, 0));
+        l_bestscore.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_bestscore.setText("Best Score: 0");
+        l_bestscore.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-                jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-                jLabel3.setForeground(new java.awt.Color(153, 0, 0));
-                jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                jLabel3.setText("******GUESSING GAME******");
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("******GUESSING GAME******");
 
-                l_score.setForeground(new java.awt.Color(0, 0, 0));
-                l_score.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                l_score.setText("Score: 0");
-                l_score.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        l_score.setForeground(new java.awt.Color(0, 0, 0));
+        l_score.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_score.setText("Score: 0");
+        l_score.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-                l_guess.setForeground(new java.awt.Color(0, 0, 0));
-                l_guess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                l_guess.setText("Guesses: 0");
-                l_guess.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        l_guess.setForeground(new java.awt.Color(0, 0, 0));
+        l_guess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_guess.setText("Guesses: 0");
+        l_guess.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-                l_life.setForeground(new java.awt.Color(0, 0, 0));
-                l_life.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                l_life.setText("Life: 10");
-                l_life.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        l_life.setForeground(new java.awt.Color(0, 0, 0));
+        l_life.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_life.setText("Life: 10");
+        l_life.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-                l_unshow.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                l_unshow.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                l_unshow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/eye_disable.png"))); // NOI18N
-                l_unshow.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-                l_unshow.addMouseListener(new java.awt.event.MouseAdapter() {
-                        public void mouseClicked(java.awt.event.MouseEvent evt) {
-                                l_unshowMouseClicked(evt);
-                        }
-                });
+        l_unshow.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        l_unshow.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_unshow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/eye_disable.png"))); // NOI18N
+        l_unshow.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        l_unshow.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                l_unshowMouseClicked(evt);
+            }
+        });
 
-                l_show.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                l_show.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                l_show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/eye_enable.png"))); // NOI18N
-                l_show.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-                l_show.addMouseListener(new java.awt.event.MouseAdapter() {
-                        public void mouseClicked(java.awt.event.MouseEvent evt) {
-                                l_showMouseClicked(evt);
-                        }
-                });
+        l_show.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        l_show.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/eye_enable.png"))); // NOI18N
+        l_show.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        l_show.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                l_showMouseClicked(evt);
+            }
+        });
 
-                l_showRandom.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                l_showRandom.setForeground(new java.awt.Color(0, 0, 0));
-                l_showRandom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                l_showRandom.setText("?");
-                l_showRandom.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        l_showRandom.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        l_showRandom.setForeground(new java.awt.Color(0, 0, 0));
+        l_showRandom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_showRandom.setText("?");
+        l_showRandom.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-                jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-                jLabel8.setText("Enter your Number (1-100)");
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Enter your Number (1-100)");
 
-                f_guess.setForeground(new java.awt.Color(0, 0, 0));
-                f_guess.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-                f_guess.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                f_guessActionPerformed(evt);
-                        }
-                });
+        f_guess.setForeground(new java.awt.Color(0, 0, 0));
+        f_guess.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        f_guess.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f_guessActionPerformed(evt);
+            }
+        });
 
-                jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/search.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/search.png"))); // NOI18N
 
-                btn_newRandom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/shuffle.png"))); // NOI18N
-                btn_newRandom.setText("New Random Number");
-                btn_newRandom.setToolTipText("Random Number");
-                btn_newRandom.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                btn_newRandomActionPerformed(evt);
-                        }
-                });
-                btn_newRandom.addKeyListener(new java.awt.event.KeyAdapter() {
-                        public void keyTyped(java.awt.event.KeyEvent evt) {
-                                btn_newRandomKeyTyped(evt);
-                        }
-                });
+        btn_newRandom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/shuffle.png"))); // NOI18N
+        btn_newRandom.setText("New Random Number");
+        btn_newRandom.setToolTipText("Random Number");
+        btn_newRandom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_newRandomActionPerformed(evt);
+            }
+        });
+        btn_newRandom.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                btn_newRandomKeyTyped(evt);
+            }
+        });
 
-                btn_guess.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/check.png"))); // NOI18N
-                btn_guess.setText("Guess");
-                btn_guess.setToolTipText("Your Guess");
-                btn_guess.addActionListener(new java.awt.event.ActionListener() {
-                        public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                btn_guessActionPerformed(evt);
-                        }
-                });
+        btn_guess.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/check.png"))); // NOI18N
+        btn_guess.setText("Guess");
+        btn_guess.setToolTipText("Your Guess");
+        btn_guess.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_guessActionPerformed(evt);
+            }
+        });
 
-                l_remarks.setBackground(new java.awt.Color(102, 0, 0));
-                l_remarks.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                l_remarks.setForeground(new java.awt.Color(0, 0, 0));
-                l_remarks.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                l_remarks.setText("-------------------- Try your luck --------------------");
-                l_remarks.setOpaque(true);
+        l_remarks.setBackground(new java.awt.Color(102, 0, 0));
+        l_remarks.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        l_remarks.setForeground(new java.awt.Color(0, 0, 0));
+        l_remarks.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_remarks.setText("-------------------- Try your luck --------------------");
+        l_remarks.setOpaque(true);
 
-                javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-                jPanel1.setLayout(jPanel1Layout);
-                jPanel1Layout.setHorizontalGroup(
-                                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout
-                                                                .createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addGroup(jPanel1Layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                .addComponent(l_remarks,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                Short.MAX_VALUE)
-                                                                                .addComponent(jSeparator1)
-                                                                                .addGroup(jPanel1Layout
-                                                                                                .createSequentialGroup()
-                                                                                                .addComponent(l_reset,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                46,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addComponent(l_bestscore,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                81,
-                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addComponent(jLabel3,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                Short.MAX_VALUE))
-                                                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                                jPanel1Layout.createSequentialGroup()
-                                                                                                                .addComponent(jLabel4)
-                                                                                                                .addPreferredGap(
-                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                .addGroup(jPanel1Layout
-                                                                                                                                .createParallelGroup(
-                                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                                .addComponent(jLabel8,
-                                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                                                Short.MAX_VALUE)
-                                                                                                                                .addGroup(jPanel1Layout
-                                                                                                                                                .createSequentialGroup()
-                                                                                                                                                .addComponent(l_score,
-                                                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                                                                Short.MAX_VALUE)
-                                                                                                                                                .addPreferredGap(
-                                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                                                                                                .addComponent(l_guess,
-                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                81,
-                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                                                .addPreferredGap(
-                                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                                                                                                .addComponent(l_life,
-                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                81,
-                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                                                                .addGroup(jPanel1Layout
-                                                                                                                                                .createSequentialGroup()
-                                                                                                                                                .addGroup(jPanel1Layout
-                                                                                                                                                                .createParallelGroup(
-                                                                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                                                                .addGroup(jPanel1Layout
-                                                                                                                                                                                .createSequentialGroup()
-                                                                                                                                                                                .addComponent(btn_newRandom,
-                                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                                                198,
-                                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                                                                                .addPreferredGap(
-                                                                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                                                                                .addComponent(btn_guess))
-                                                                                                                                                                .addGroup(jPanel1Layout
-                                                                                                                                                                                .createSequentialGroup()
-                                                                                                                                                                                .addComponent(f_guess,
-                                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                                                164,
-                                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                                                                                .addPreferredGap(
-                                                                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                                                                                .addComponent(l_showRandom,
-                                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                                                40,
-                                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                                                                                .addPreferredGap(
-                                                                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                                                                                .addComponent(l_show,
-                                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                                                40,
-                                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                                                                                .addPreferredGap(
-                                                                                                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                                                                                                .addComponent(l_unshow,
-                                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                                                                40,
-                                                                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                                                                                                .addGap(0, 0, Short.MAX_VALUE)))))
-                                                                .addContainerGap()));
-                jPanel1Layout.setVerticalGroup(
-                                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addContainerGap()
-                                                                .addGroup(jPanel1Layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                false)
-                                                                                .addComponent(l_reset,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                Short.MAX_VALUE)
-                                                                                .addComponent(l_bestscore,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                Short.MAX_VALUE)
-                                                                                .addComponent(jLabel3,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                32,
-                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(jSeparator1,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                10,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addGroup(jPanel1Layout.createParallelGroup(
-                                                                                javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                false)
-                                                                                .addComponent(jLabel4)
-                                                                                .addGroup(jPanel1Layout
-                                                                                                .createSequentialGroup()
-                                                                                                .addGroup(jPanel1Layout
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                                                .addComponent(l_score,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                35,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                .addComponent(l_guess,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                35,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                .addComponent(l_life,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                35,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                                .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addComponent(jLabel8)
-                                                                                                .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addGroup(jPanel1Layout
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                                .addComponent(l_show,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                35,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                .addComponent(l_unshow,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                35,
-                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                .addGroup(jPanel1Layout
-                                                                                                                                .createParallelGroup(
-                                                                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                                                                .addComponent(f_guess,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                35,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                                                                .addComponent(l_showRandom,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                                                                                35,
-                                                                                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                                                                .addPreferredGap(
-                                                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                                                Short.MAX_VALUE)
-                                                                                                .addGroup(jPanel1Layout
-                                                                                                                .createParallelGroup(
-                                                                                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                                                                .addComponent(btn_newRandom)
-                                                                                                                .addComponent(btn_guess))))
-                                                                .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(l_remarks,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                25,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE)));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(l_remarks, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSeparator1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(l_reset, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(l_bestscore, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(l_score, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(l_guess, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(l_life, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(btn_newRandom, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btn_guess))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(f_guess, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(l_showRandom, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(l_show, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(l_unshow, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(l_reset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(l_bestscore, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel4)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(l_score, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(l_guess, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(l_life, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(l_show, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(l_unshow, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(f_guess, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(l_showRandom, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_newRandom)
+                            .addComponent(btn_guess))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(l_remarks, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-                javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-                getContentPane().setLayout(layout);
-                layout.setHorizontalGroup(
-                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-                layout.setVerticalGroup(
-                                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
-                pack();
-        }// </editor-fold>//GEN-END:initComponents
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 
         private void l_resetMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_l_resetMouseClicked
                 // TODO add your handling code here:
@@ -385,8 +269,6 @@ public class GuessingGame extends javax.swing.JFrame {
                                 JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, null);
                 if (x == JOptionPane.YES_OPTION) {
                         reset();
-                } else {
-                        System.exit(0);
                 }
         }// GEN-LAST:event_l_resetMouseClicked
 
@@ -472,25 +354,25 @@ public class GuessingGame extends javax.swing.JFrame {
                 });
         }
 
-        // Variables declaration - do not modify//GEN-BEGIN:variables
-        private javax.swing.JButton btn_guess;
-        private javax.swing.JButton btn_newRandom;
-        private javax.swing.JTextField f_guess;
-        private javax.swing.JLabel jLabel3;
-        private javax.swing.JLabel jLabel4;
-        private javax.swing.JLabel jLabel8;
-        private javax.swing.JPanel jPanel1;
-        private javax.swing.JSeparator jSeparator1;
-        private javax.swing.JLabel l_bestscore;
-        private javax.swing.JLabel l_guess;
-        private javax.swing.JLabel l_life;
-        private javax.swing.JLabel l_remarks;
-        private javax.swing.JLabel l_reset;
-        private javax.swing.JLabel l_score;
-        private javax.swing.JLabel l_show;
-        private javax.swing.JLabel l_showRandom;
-        private javax.swing.JLabel l_unshow;
-        // End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_guess;
+    private javax.swing.JButton btn_newRandom;
+    private javax.swing.JTextField f_guess;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel l_bestscore;
+    private javax.swing.JLabel l_guess;
+    private javax.swing.JLabel l_life;
+    private javax.swing.JLabel l_remarks;
+    private javax.swing.JLabel l_reset;
+    private javax.swing.JLabel l_score;
+    private javax.swing.JLabel l_show;
+    private javax.swing.JLabel l_showRandom;
+    private javax.swing.JLabel l_unshow;
+    // End of variables declaration//GEN-END:variables
 
         // initialize Component
         Gui gui;
@@ -636,7 +518,7 @@ public class GuessingGame extends javax.swing.JFrame {
                                  * User only allows 2 error to have the default message
                                  * otherwise, the next message will be dynamic
                                  */
-                                if (errorCount < 2) {
+                                if (errorCount < 3) {
                                         message = String.valueOf(numGuess) + " is less than the random mumber!";
 
                                 } else {
@@ -703,6 +585,7 @@ public class GuessingGame extends javax.swing.JFrame {
                 l_guess.setText("Guesses: 0");
                 guessCount = 0;
                 l_life.setText("Life: 10");
+                l_life.setIcon(null);
                 lifeCount = 10;
                 greaterThanError = 0;
                 lessThanError = 0;
@@ -721,12 +604,17 @@ public class GuessingGame extends javax.swing.JFrame {
                 l_guess.setText("Guesses: 0");
                 guessCount = 0;
                 l_life.setText("Life: 10");
+                l_life.setIcon(null);
                 lifeCount = 10;
                 greaterThanError = 0;
                 lessThanError = 0;
                 random = GuessNumbers._randomNumber();
                 l_score.setText("Score: 0");
                 yourScore = 0;
+                // include best score to reset
+                bestScore = 0;
+                Gui.setNewBestScore("bestScore[" + bestScore + "]");
+                l_bestscore.setText("Best Score: 0");
 
         }
 
