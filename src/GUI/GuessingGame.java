@@ -26,58 +26,59 @@ public class GuessingGame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        l_reset = new javax.swing.JLabel();
+        l_bestscore = new javax.swing.JLabel();
+        l_score = new javax.swing.JLabel();
+        l_guess = new javax.swing.JLabel();
+        l_life = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        f_guess = new javax.swing.JTextField();
+        l_showRandom = new javax.swing.JLabel();
+        l_show = new javax.swing.JLabel();
+        l_unshow = new javax.swing.JLabel();
+        l_remarks = new javax.swing.JLabel();
+        btn_newRandom = new javax.swing.JButton();
+        btn_guess = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/reset.png"))); // NOI18N
-        jLabel1.setToolTipText("Reset");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(8, 13, 30, 30);
+        l_reset.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_reset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/reset.png"))); // NOI18N
+        l_reset.setToolTipText("Reset");
+        getContentPane().add(l_reset);
+        l_reset.setBounds(8, 13, 30, 30);
 
-        jLabel2.setFont(new java.awt.Font("DS-Digital", 3, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Best Score: 0");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(50, 6, 220, 37);
+        l_bestscore.setFont(new java.awt.Font("DS-Digital", 3, 36)); // NOI18N
+        l_bestscore.setForeground(new java.awt.Color(255, 255, 255));
+        l_bestscore.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_bestscore.setText("Best Score: 0");
+        getContentPane().add(l_bestscore);
+        l_bestscore.setBounds(50, 6, 220, 37);
 
-        jLabel3.setFont(new java.awt.Font("DS-Digital", 3, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Score: 0");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 60, 83, 25);
+        l_score.setFont(new java.awt.Font("DS-Digital", 3, 24)); // NOI18N
+        l_score.setForeground(new java.awt.Color(255, 255, 255));
+        l_score.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_score.setText("Score: 0");
+        getContentPane().add(l_score);
+        l_score.setBounds(10, 60, 83, 25);
 
-        jLabel4.setFont(new java.awt.Font("DS-Digital", 3, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Guesses: 0");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(120, 60, 120, 25);
+        l_guess.setFont(new java.awt.Font("DS-Digital", 3, 24)); // NOI18N
+        l_guess.setForeground(new java.awt.Color(255, 255, 255));
+        l_guess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_guess.setText("Guesses: 0");
+        getContentPane().add(l_guess);
+        l_guess.setBounds(120, 60, 120, 25);
 
-        jLabel5.setFont(new java.awt.Font("DS-Digital", 3, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("    Life: 0");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(240, 60, 110, 25);
+        l_life.setFont(new java.awt.Font("DS-Digital", 3, 24)); // NOI18N
+        l_life.setForeground(new java.awt.Color(255, 255, 255));
+        l_life.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_life.setText("    Life: 0");
+        getContentPane().add(l_life);
+        l_life.setBounds(240, 60, 110, 25);
 
         jLabel6.setFont(new java.awt.Font("DS-Digital", 3, 45)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 153, 0));
@@ -100,82 +101,91 @@ public class GuessingGame extends javax.swing.JFrame {
         getContentPane().add(jLabel9);
         jLabel9.setBounds(0, 260, 350, 40);
 
-        jTextField1.setFont(new java.awt.Font("DS-Digital", 3, 100)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 102, 255));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(0, 102, 255)));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        f_guess.setBackground(new java.awt.Color(255, 255, 255));
+        f_guess.setFont(new java.awt.Font("DS-Digital", 3, 100)); // NOI18N
+        f_guess.setForeground(new java.awt.Color(0, 102, 255));
+        f_guess.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        f_guess.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(0, 102, 255)));
+        f_guess.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                f_guessActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(100, 310, 156, 130);
+        getContentPane().add(f_guess);
+        f_guess.setBounds(100, 310, 156, 130);
 
-        jLabel10.setFont(new java.awt.Font("DS-Digital", 3, 48)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 102, 255));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("?");
-        jLabel10.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(0, 102, 255)));
-        getContentPane().add(jLabel10);
-        jLabel10.setBounds(140, 500, 75, 53);
+        l_showRandom.setFont(new java.awt.Font("DS-Digital", 3, 48)); // NOI18N
+        l_showRandom.setForeground(new java.awt.Color(0, 102, 255));
+        l_showRandom.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_showRandom.setText("?");
+        l_showRandom.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, new java.awt.Color(0, 102, 255)));
+        getContentPane().add(l_showRandom);
+        l_showRandom.setBounds(140, 500, 75, 53);
 
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel11.setFont(new java.awt.Font("DS-Digital", 3, 48)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/vision_view_eye_icon_153887.png"))); // NOI18N
-        jLabel11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        getContentPane().add(jLabel11);
-        jLabel11.setBounds(100, 560, 75, 52);
+        l_show.setBackground(new java.awt.Color(255, 255, 255));
+        l_show.setFont(new java.awt.Font("DS-Digital", 3, 48)); // NOI18N
+        l_show.setForeground(new java.awt.Color(255, 153, 0));
+        l_show.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/vision_view_eye_icon_153887.png"))); // NOI18N
+        l_show.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(l_show);
+        l_show.setBounds(100, 560, 75, 52);
 
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("DS-Digital", 3, 48)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/disable_eye_hidden_hide_internet_security_view_icon_127055.png"))); // NOI18N
-        jLabel12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        getContentPane().add(jLabel12);
-        jLabel12.setBounds(180, 560, 75, 52);
+        l_unshow.setBackground(new java.awt.Color(255, 255, 255));
+        l_unshow.setFont(new java.awt.Font("DS-Digital", 3, 48)); // NOI18N
+        l_unshow.setForeground(new java.awt.Color(255, 153, 0));
+        l_unshow.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_unshow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/disable_eye_hidden_hide_internet_security_view_icon_127055.png"))); // NOI18N
+        l_unshow.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        getContentPane().add(l_unshow);
+        l_unshow.setBounds(180, 560, 75, 52);
 
-        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel14.setFont(new java.awt.Font("DS-Digital", 3, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("---- Enter a number (1-100) ----");
-        jLabel14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        getContentPane().add(jLabel14);
-        jLabel14.setBounds(0, 620, 350, 30);
+        l_remarks.setBackground(new java.awt.Color(255, 255, 255));
+        l_remarks.setFont(new java.awt.Font("DS-Digital", 3, 24)); // NOI18N
+        l_remarks.setForeground(new java.awt.Color(204, 0, 0));
+        l_remarks.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        l_remarks.setText("-------- Try Your luck --------");
+        l_remarks.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, java.awt.Color.white));
+        l_remarks.setOpaque(true);
+        getContentPane().add(l_remarks);
+        l_remarks.setBounds(0, 620, 350, 30);
 
-        jButton1.setFont(new java.awt.Font("DS-Digital", 3, 36)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 153, 0));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/shuffle.png"))); // NOI18N
-        jButton1.setText("  New");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_newRandom.setBackground(new java.awt.Color(102, 102, 102));
+        btn_newRandom.setFont(new java.awt.Font("DS-Digital", 3, 36)); // NOI18N
+        btn_newRandom.setForeground(new java.awt.Color(255, 153, 0));
+        btn_newRandom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/shuffle.png"))); // NOI18N
+        btn_newRandom.setText("  New");
+        btn_newRandom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_newRandomActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(10, 450, 160, 40);
+        getContentPane().add(btn_newRandom);
+        btn_newRandom.setBounds(10, 450, 160, 40);
 
-        jButton3.setFont(new java.awt.Font("DS-Digital", 3, 36)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 255, 102));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/check.png"))); // NOI18N
-        jButton3.setText("Guess");
-        getContentPane().add(jButton3);
-        jButton3.setBounds(180, 450, 160, 40);
+        btn_guess.setBackground(new java.awt.Color(102, 102, 102));
+        btn_guess.setFont(new java.awt.Font("DS-Digital", 3, 36)); // NOI18N
+        btn_guess.setForeground(new java.awt.Color(0, 255, 102));
+        btn_guess.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/check.png"))); // NOI18N
+        btn_guess.setText("Guess");
+        getContentPane().add(btn_guess);
+        btn_guess.setBounds(180, 450, 160, 40);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/background.png"))); // NOI18N
+        jLabel8.setText("jLabel8");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(0, 0, 350, 650);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void f_guessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f_guessActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_f_guessActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_newRandomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newRandomActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_newRandomActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,20 +223,21 @@ public class GuessingGame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton btn_guess;
+    private javax.swing.JButton btn_newRandom;
+    private javax.swing.JTextField f_guess;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel l_bestscore;
+    private javax.swing.JLabel l_guess;
+    private javax.swing.JLabel l_life;
+    private javax.swing.JLabel l_remarks;
+    private javax.swing.JLabel l_reset;
+    private javax.swing.JLabel l_score;
+    private javax.swing.JLabel l_show;
+    private javax.swing.JLabel l_showRandom;
+    private javax.swing.JLabel l_unshow;
     // End of variables declaration//GEN-END:variables
 }
