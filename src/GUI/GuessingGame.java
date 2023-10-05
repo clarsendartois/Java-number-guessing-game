@@ -27,6 +27,7 @@ public class GuessingGame extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -49,7 +50,10 @@ public class GuessingGame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GUESSING GAME");
+        setBackground(new java.awt.Color(102, 102, 102));
+        setMinimumSize(new java.awt.Dimension(350, 650));
         setResizable(false);
+        setSize(new java.awt.Dimension(350, 650));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         l_reset.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -163,7 +167,7 @@ public class GuessingGame extends javax.swing.JFrame {
         getContentPane().add(btn_guess, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 170, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/background.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 650));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
