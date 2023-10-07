@@ -13,9 +13,21 @@ public class GuessNumbers {
     private static int _RANDOMGEN = 0;
 
     // Create a random number
-    public static int _RANDOMGEN() {
+    public static int _randomNumber() {
         _RANDOMGEN = (int) Math.round(Math.random() * 100); // 1-100
-        return _RANDOMGEN;
+        return _checkIfZero(_RANDOMGEN);
+    }
+
+    // Check number if o, ex. 1-9, should be 01-09
+    private static int _checkIfZero(int num) {
+        int newNum = 0;
+        if (num == 0) {
+            newNum = _randomNumber();
+        } else {
+            newNum = num;
+        }
+        return newNum;
+
     }
 
 }

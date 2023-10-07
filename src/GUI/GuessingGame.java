@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import Classes.GuessNumbers;
 import Classes.Gui;
 
 /**
@@ -28,7 +29,8 @@ public class GuessingGame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         l_reset = new javax.swing.JLabel();
@@ -134,7 +136,8 @@ public class GuessingGame extends javax.swing.JFrame {
         l_unshow.setFont(new java.awt.Font("DS-Digital", 3, 48)); // NOI18N
         l_unshow.setForeground(new java.awt.Color(255, 153, 0));
         l_unshow.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        l_unshow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/disable_eye_hidden_hide_internet_security_view_icon_127055.png"))); // NOI18N
+        l_unshow.setIcon(new javax.swing.ImageIcon(
+                getClass().getResource("/Asset/disable_eye_hidden_hide_internet_security_view_icon_127055.png"))); // NOI18N
         l_unshow.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         getContentPane().add(l_unshow, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 560, 75, -1));
 
@@ -143,7 +146,8 @@ public class GuessingGame extends javax.swing.JFrame {
         l_remarks.setForeground(new java.awt.Color(204, 0, 0));
         l_remarks.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         l_remarks.setText("-------- Try Your luck --------");
-        l_remarks.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, java.awt.Color.white));
+        l_remarks.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null,
+                java.awt.Color.white, null, java.awt.Color.white));
         l_remarks.setOpaque(true);
         getContentPane().add(l_remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 620, 350, 30));
 
@@ -178,6 +182,7 @@ public class GuessingGame extends javax.swing.JFrame {
 
     private void btn_newRandomActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_newRandomActionPerformed
         // TODO add your handling code here:
+        randomNew();
     }// GEN-LAST:event_btn_newRandomActionPerformed
 
     /**
@@ -245,6 +250,10 @@ public class GuessingGame extends javax.swing.JFrame {
     // Initialize Component
     Gui gui;
 
+    // Variable
+    private int random = 0, bestScore = 0, yourScore = 0, addCorrectScore = 0;
+    private byte guessCount = 0, errorCount = 10, greatThanError = 0, lessThanError = 0;
+
     private void init() {
         gui = new Gui();
 
@@ -254,5 +263,16 @@ public class GuessingGame extends javax.swing.JFrame {
         // Icon
         gui.setIconFrame(this);
 
+        // Load random number
+        random = GuessNumbers._randomNumber();
+        f_guess.setText(String.valueOf(random));
+
     }
+
+    // Create new random
+    private void randomNew() {
+        random = GuessNumbers._randomNumber();
+        f_guess.setText(String.valueOf(random));
+    }
+
 }
