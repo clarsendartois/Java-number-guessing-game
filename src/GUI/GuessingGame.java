@@ -30,6 +30,7 @@ public class GuessingGame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -168,6 +169,11 @@ public class GuessingGame extends javax.swing.JFrame {
         btn_guess.setForeground(new java.awt.Color(255, 153, 0));
         btn_guess.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/check.png"))); // NOI18N
         btn_guess.setText("Guess");
+        btn_guess.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_guessActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_guess, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 170, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/background.png"))); // NOI18N
@@ -175,6 +181,11 @@ public class GuessingGame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_guessActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_guessActionPerformed
+        // TODO add your handling code here:
+        guess();
+    }// GEN-LAST:event_btn_guessActionPerformed
 
     private void f_guessActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_f_guessActionPerformed
         // TODO add your handling code here:
@@ -265,14 +276,24 @@ public class GuessingGame extends javax.swing.JFrame {
 
         // Load random number
         random = GuessNumbers._randomNumber();
-        f_guess.setText(String.valueOf(random));
-
     }
 
     // Create new random
     private void randomNew() {
         random = GuessNumbers._randomNumber();
-        f_guess.setText(String.valueOf(random));
+    }
+
+    private void guess() {
+        // Validate user input
+        if (f_guess.getText().equals("")) {
+            Gui._message("Please enter your number", 0);
+            f_guess.requestFocus();
+        } else if (Integer.parseInt(f_guess.getText()) >= 101 || Integer.parseInt(f_guess.getText()) < 1) {
+            Gui._message("Please enter number from 1-100!", 0);
+            f_guess.requestFocus();
+        } else {
+            int yourNumber = Integer.parseInt(f_guess.getText());
+        }
     }
 
 }
