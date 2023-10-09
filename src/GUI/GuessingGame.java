@@ -85,7 +85,7 @@ public class GuessingGame extends javax.swing.JFrame {
         l_life.setFont(new java.awt.Font("DS-Digital", 3, 24)); // NOI18N
         l_life.setForeground(new java.awt.Color(255, 255, 255));
         l_life.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        l_life.setText("    Life: 0");
+        l_life.setText("    Life: 10");
         getContentPane().add(l_life, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 110, -1));
 
         jLabel6.setFont(new java.awt.Font("DS-Digital", 3, 45)); // NOI18N
@@ -293,6 +293,16 @@ public class GuessingGame extends javax.swing.JFrame {
             f_guess.requestFocus();
         } else {
             int yourNumber = Integer.parseInt(f_guess.getText());
+            if (yourNumber == random) {
+                yourScore++; // Increment correct number
+                l_score.setText("Score: " + yourScore);
+            } else {
+                errorCount--; // Count the error
+                l_life.setText("Life: " + errorCount);
+            }
+            // Count the guess
+            guessCount++; // Increment guess
+            l_guess.setText("Guesses: " + guessCount);
         }
     }
 
