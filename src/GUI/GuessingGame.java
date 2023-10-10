@@ -31,6 +31,8 @@ public class GuessingGame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -85,7 +87,7 @@ public class GuessingGame extends javax.swing.JFrame {
         l_life.setFont(new java.awt.Font("DS-Digital", 3, 24)); // NOI18N
         l_life.setForeground(new java.awt.Color(255, 255, 255));
         l_life.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        l_life.setText("    Life: 10");
+        l_life.setText("    Life: 0");
         getContentPane().add(l_life, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 110, -1));
 
         jLabel6.setFont(new java.awt.Font("DS-Digital", 3, 45)); // NOI18N
@@ -131,6 +133,11 @@ public class GuessingGame extends javax.swing.JFrame {
         l_show.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         l_show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Asset/vision_view_eye_icon_153887.png"))); // NOI18N
         l_show.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        l_show.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                l_showMouseClicked(evt);
+            }
+        });
         getContentPane().add(l_show, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 560, 75, -1));
 
         l_unshow.setBackground(new java.awt.Color(255, 255, 255));
@@ -140,6 +147,11 @@ public class GuessingGame extends javax.swing.JFrame {
         l_unshow.setIcon(new javax.swing.ImageIcon(
                 getClass().getResource("/Asset/disable_eye_hidden_hide_internet_security_view_icon_127055.png"))); // NOI18N
         l_unshow.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        l_unshow.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                l_unshowMouseClicked(evt);
+            }
+        });
         getContentPane().add(l_unshow, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 560, 75, -1));
 
         l_remarks.setBackground(new java.awt.Color(255, 255, 255));
@@ -181,6 +193,20 @@ public class GuessingGame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void l_unshowMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_l_unshowMouseClicked
+        // TODO add your handling code here:
+        l_show.setEnabled(true);
+        l_unshow.setEnabled(false);
+        l_showRandom.setText("?");
+    }// GEN-LAST:event_l_unshowMouseClicked
+
+    private void l_showMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_l_showMouseClicked
+        // TODO add your handling code here:
+        l_show.setEnabled(false);
+        l_unshow.setEnabled(true);
+        l_showRandom.setText(String.valueOf(random));
+    }// GEN-LAST:event_l_showMouseClicked
 
     private void btn_guessActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_guessActionPerformed
         // TODO add your handling code here:
@@ -276,6 +302,9 @@ public class GuessingGame extends javax.swing.JFrame {
 
         // Load random number
         random = GuessNumbers._randomNumber();
+
+        // Hide
+        l_unshow.setEnabled(false);
     }
 
     // Create new random
@@ -290,10 +319,12 @@ public class GuessingGame extends javax.swing.JFrame {
             f_guess.requestFocus();
         } else if (Integer.parseInt(f_guess.getText()) >= 101 || Integer.parseInt(f_guess.getText()) < 1) {
             Gui._message("Please enter number from 1-100!", 0);
+            f_guess.setText("");
             f_guess.requestFocus();
         } else {
             int yourNumber = Integer.parseInt(f_guess.getText());
             if (yourNumber == random) {
+                Gui._message("YOU WON!", 1);
                 yourScore++; // Increment correct number
                 l_score.setText("Score: " + yourScore);
             } else {
