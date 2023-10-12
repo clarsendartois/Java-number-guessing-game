@@ -4,6 +4,9 @@
  */
 package GUI;
 
+import javax.swing.ImageIcon;
+import java.awt.Toolkit;
+
 import Classes.GuessNumbers;
 import Classes.Gui;
 
@@ -356,6 +359,14 @@ public class GuessingGame extends javax.swing.JFrame {
             } else {
                 lifeCount--; // Count the error
                 l_life.setText("Life: " + lifeCount);
+
+                // Creating warning icon when life is less than 5
+                if (lifeCount <= 4) {
+                    l_life.setIcon(new ImageIcon(
+                            Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Asset/warning.png"))));
+                } else {
+                    l_life.setIcon(null);
+                }
 
                 // Check if lifecount reached to 0
                 if (lifeCount == 0) {
