@@ -33,6 +33,7 @@ public class GuessingGame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -118,6 +119,11 @@ public class GuessingGame extends javax.swing.JFrame {
                 f_guessActionPerformed(evt);
             }
         });
+        f_guess.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                f_guessKeyTyped(evt);
+            }
+        });
         getContentPane().add(f_guess, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 156, 130));
 
         l_showRandom.setFont(new java.awt.Font("DS-Digital", 3, 48)); // NOI18N
@@ -193,6 +199,11 @@ public class GuessingGame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void f_guessKeyTyped(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_f_guessKeyTyped
+        // TODO add your handling code here:
+        Gui._integerOnly(evt);
+    }// GEN-LAST:event_f_guessKeyTyped
 
     private void l_unshowMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_l_unshowMouseClicked
         // TODO add your handling code here:
@@ -288,8 +299,8 @@ public class GuessingGame extends javax.swing.JFrame {
     Gui gui;
 
     // Variable
-    private int random = 0, bestScore = 0, yourScore = 0, addCorrectScore = 0;
-    private byte guessCount = 0, errorCount = 10, greatThanError = 0, lessThanError = 0;
+    private int random = 0, bestScore = 0, yourScore = 0, addCorrectScore = 3;
+    private byte guessCount = 0, lifeCount = 10, greatThanError = 0, lessThanError = 0, countError = 3;
 
     private void init() {
         gui = new Gui();
@@ -310,6 +321,16 @@ public class GuessingGame extends javax.swing.JFrame {
     // Create new random
     private void randomNew() {
         random = GuessNumbers._randomNumber();
+
+        // Clear field
+        f_guess.setText("");
+        f_guess.requestFocus();
+
+        //
+        l_unshow.setEnabled(false);
+        l_show.setEnabled(true);
+        l_showRandom.setEnabled(true);
+
     }
 
     private void guess() {
@@ -324,12 +345,23 @@ public class GuessingGame extends javax.swing.JFrame {
         } else {
             int yourNumber = Integer.parseInt(f_guess.getText());
             if (yourNumber == random) {
-                Gui._message("YOU WON!", 1);
+                Gui._message("YOU WON! \nAdditional 3 life was added!", 1);
                 yourScore++; // Increment correct number
                 l_score.setText("Score: " + yourScore);
+
+                // Add life
+                lifeCount += addCorrectScore;
+                l_life.setText("Life: " + lifeCount);
+
             } else {
-                errorCount--; // Count the error
-                l_life.setText("Life: " + errorCount);
+                lifeCount--; // Count the error
+                l_life.setText("Life: " + lifeCount);
+
+                // Check if lifecount reached to 0
+                if (lifeCount == 0) {
+                    Gui._message("You've used your life! \nPlease try again next time!", 0);
+                    System.exit(0);
+                }
             }
             // Count the guess
             guessCount++; // Increment guess
