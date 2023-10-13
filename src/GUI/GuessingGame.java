@@ -367,6 +367,8 @@ public class GuessingGame extends javax.swing.JFrame {
                 } else {
                     l_life.setIcon(null);
                 }
+                // Creating hint
+                hint(random, yourNumber);
 
                 // Check if lifecount reached to 0
                 if (lifeCount == 0) {
@@ -380,5 +382,64 @@ public class GuessingGame extends javax.swing.JFrame {
         }
     }
 
+    // Creating hint
+    private void hint(int _randomNumber, int yourNumber) {
+        String mes;
+        if (_randomNumber > yourNumber) {
+            // Count
+            lessThanError++;
+            mes = messageHint(lessThanError, (byte) 1, yourNumber);
+            l_remarks.setText(mes);
+        } else {
+            greatThanError++;
+            mes = messageHint(greatThanError, (byte) 1, yourNumber);
+            l_remarks.setText(mes);
+        }
+
+    }
+
+    // Contains the message hint in array
+    private String messageHint(byte errorCount, byte errorCatcher, int numGuess) {
+        String message;
+        switch (errorCatcher) {
+            // For less than hint
+            case 1:
+                String messageCat[] = { String.valueOf(numGuess) + ", less than the number! Observe!",
+                        String.valueOf(numGuess) + ", less than the number! Oh! Come on!",
+                        String.valueOf(numGuess) + ", less than the number! Don't give up!",
+                        String.valueOf(numGuess) + ", less than the number! Try again!"
+                };
+                // User only allows 2 errors to have the default message otherwise, the next
+                // message will be dynamic
+                if (errorCount < 2) {
+                    message = String.valueOf(numGuess) + ", less than the number!";
+                } else {
+                    // Make it dynamic messge out from category array
+                    int randomMes = (int) Math.round(Math.random() * 3);
+                    message = messageCat[randomMes];
+                }
+                break;
+
+            // For greater than hint
+            default:
+                String messageCat1[] = { String.valueOf(numGuess) + ", greater than the number! Observe!",
+                        String.valueOf(numGuess) + ", greater than the number! Oh! Come on!",
+                        String.valueOf(numGuess) + ", greater than the number! Don't give up!",
+                        String.valueOf(numGuess) + ", greater than the number! Try again!"
+                };
+
+                // User only allows 2 errors to have the default message otherwise, the next
+                // message will be dynamic
+                if (errorCount < 2) {
+                    message = String.valueOf(numGuess) + ", greater than the number!";
+                } else {
+                    // Make it dynamic messge out from category array
+                    int randomMes = (int) Math.round(Math.random() * 3);
+                    message = messageCat1[randomMes];
+                }
+                break;
+        }
+
+        return message;
+    }
 }
-//
