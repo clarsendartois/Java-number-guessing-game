@@ -8,6 +8,13 @@ import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.Buffer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -63,4 +70,23 @@ public class Gui {
         }
     }
 
+    // Create and update best score or highest score
+    private static String patFileBestScore = System.getProperty("user.dir") + "/src/GUI/bestscore.ini";
+
+    // Get the current best score
+    public static int getCurrentBestScore() {
+        int bestScore;
+        String line, newLine = "";
+        try {
+            // Reading file and get the content
+            BufferedReader buff = BufferedReader(new FileReader(patFileBestScore));
+            while ((line = buff.readLine()) != null) {
+
+            }
+        } catch (FileNotFoundException e) {
+        } catch (IOException ex) {
+            Logger.getLogger(Gui.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
 }
