@@ -9,8 +9,10 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.Buffer;
 import java.util.logging.Level;
@@ -79,14 +81,31 @@ public class Gui {
         String line, newLine = "";
         try {
             // Reading file and get the content
-            BufferedReader buff = BufferedReader(new FileReader(patFileBestScore));
+            BufferedReader buff = new BufferedReader(new FileReader(patFileBestScore));
             while ((line = buff.readLine()) != null) {
+                newLine = line;
 
             }
         } catch (FileNotFoundException e) {
         } catch (IOException ex) {
             Logger.getLogger(Gui.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return 0;
+
+        // Here we get the value bestScore[0] from index [ and ] using substring
+        bestScore = Integer.parseInt(newLine.substring(newLine.indexOf("[") + 1, newLine.indexOf("]")));
+        return bestScore;
+    }
+
+    // Check for new score and write to the existing file
+    public static void setNewBestScore(String newContent) {
+        try {
+            File fileToUpdate = new File(patFileBestScore);
+            try (FileWriter fileWrite = new FileWriter(fileToUpdate)) {
+                fileWrite.write(newContent);
+                fileWrite.close();
+            }
+        } catch (Exception e) {
+        
+        }
     }
 }
