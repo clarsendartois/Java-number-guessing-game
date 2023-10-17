@@ -218,6 +218,10 @@ public class GuessingGame extends javax.swing.JFrame {
         int x = JOptionPane.showOptionDialog(this, "Are you sure you want to reset (yes/no)?", "MESSAGE",
                 JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, null);
 
+        if (x == JOptionPane.YES_OPTION) {
+            reset();
+        }
+
     }// GEN-LAST:event_l_resetMouseClicked
 
     private void f_guessKeyTyped(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_f_guessKeyTyped
@@ -380,6 +384,17 @@ public class GuessingGame extends javax.swing.JFrame {
                 // Check and update bestscore
                 updateBestscore();
 
+                // Encourange user to play again
+                Object[] options = { "YES, I WANT NOW.", "NON, I AM TIRED." };
+                int x = JOptionPane.showOptionDialog(this, "Do you want to play again (yes/no)?", "MESSAGE",
+                        JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, null);
+
+                if (x == JOptionPane.YES_OPTION) {
+                    newGame();
+                } else {
+                    System.exit(0);
+                }
+
             } else {
                 lifeCount--; // Count the error
                 l_life.setText("Life: " + lifeCount);
@@ -397,7 +412,15 @@ public class GuessingGame extends javax.swing.JFrame {
                 // Check if lifecount reached to 0
                 if (lifeCount == 0) {
                     Gui._message("You've used your life! \nPlease try again next time!", 0);
-                    System.exit(0);
+                    Object[] options = { "YES, I WANT NOW.", "NON, I AM TIRED." };
+                    int x = JOptionPane.showOptionDialog(this, "Do you want to play again (yes/no)?", "MESSAGE",
+                            JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, null);
+
+                    if (x == JOptionPane.YES_OPTION) {
+                        newGame();
+                    } else {
+                        System.exit(0);
+                    }
                 }
             }
             // Count the guess
@@ -435,7 +458,7 @@ public class GuessingGame extends javax.swing.JFrame {
                 };
                 // User only allows 2 errors to have the default message otherwise, the next
                 // message will be dynamic
-                if (errorCount < 2) {
+                if (errorCount < 3) {
                     message = String.valueOf(numGuess) + ", is less than the number.";
                 } else {
                     // Make it dynamic messge out from category array
@@ -454,7 +477,7 @@ public class GuessingGame extends javax.swing.JFrame {
 
                 // User only allows 2 errors to have the default message otherwise, the next
                 // message will be dynamic
-                if (errorCount < 2) {
+                if (errorCount < 3) {
                     message = String.valueOf(numGuess) + ", is greater than the number!";
                 } else {
                     // Make it dynamic messge out from category array
@@ -490,6 +513,7 @@ public class GuessingGame extends javax.swing.JFrame {
         guessCount = 0;
 
         l_life.setText("Life: 10");
+        l_life.setIcon(null);
         lifeCount = 10;
 
         greatThanError = 0;
@@ -510,6 +534,7 @@ public class GuessingGame extends javax.swing.JFrame {
         guessCount = 0;
 
         l_life.setText("Life: 10");
+        l_life.setIcon(null);
         lifeCount = 10;
 
         greatThanError = 0;
@@ -519,6 +544,11 @@ public class GuessingGame extends javax.swing.JFrame {
 
         l_score.setText("Score: 0");
         yourScore = 0;
+
+        // Include best score to reset
+        bestScore = 0;
+        Gui.setNewBestScore("bestScore[" + bestScore + "]");
+        l_bestscore.setText("Best Score: 0");
 
     }
 }
