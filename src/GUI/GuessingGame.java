@@ -62,7 +62,7 @@ public class GuessingGame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("GUESSING GAME");
+        setTitle("JAVA: GUESSING GAME");
         setBackground(new java.awt.Color(102, 102, 102));
         setMinimumSize(new java.awt.Dimension(350, 650));
         setResizable(false);
